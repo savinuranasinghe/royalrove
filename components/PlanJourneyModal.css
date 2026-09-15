@@ -1,0 +1,42 @@
+.plan-modal { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 24px; background: rgba(4, 13, 27, .76); backdrop-filter: blur(12px); animation: plan-backdrop-in .35s ease-out both; }
+.plan-modal__dialog { position: relative; display: grid; grid-template-columns: minmax(230px, .72fr) minmax(420px, 1.28fr); width: min(940px, 100%); max-height: min(790px, calc(100svh - 48px)); overflow: auto; background: white; color: var(--ink); box-shadow: 0 30px 90px rgba(0, 0, 0, .3); animation: plan-dialog-in .55s cubic-bezier(.16,1,.3,1) both; }
+.plan-modal__close { position: absolute; z-index: 2; top: 20px; right: 23px; width: 42px; height: 42px; border: 1px solid rgba(10,25,47,.28); border-radius: 50%; background: rgba(255,255,255,.9); color: var(--ink); font-size: 30px; font-weight: 200; line-height: 1; cursor: pointer; }
+.plan-modal__close:hover { transform: rotate(8deg); }
+.plan-modal__aside { min-height: 650px; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px 35px; color: white; background: linear-gradient(180deg, rgba(10,25,47,.15), rgba(10,25,47,.82)), url('/images/travel/coast.webp') center/cover; }
+.plan-modal__aside p { margin: 0 0 14px; font-family: "Dream Avenue", serif; font-size: 32px; text-transform: uppercase; }
+.plan-modal__aside span { font-family: "Crystal Sky", cursive; font-size: 27px; line-height: 1.3; }
+.plan-modal__content { padding: 58px 55px 48px; }
+.plan-modal__eyebrow { margin: 0 0 16px; font-size: 10px; text-transform: uppercase; letter-spacing: .15em; }
+.plan-modal__content h2 { margin: 0 0 18px; font-family: "Dream Avenue", serif; font-size: clamp(48px, 5vw, 68px); line-height: .9; font-weight: 400; text-transform: uppercase; }
+.plan-modal__content > p:not(.plan-modal__eyebrow) { max-width: 430px; margin: 0 0 30px; color: #526276; font-size: 14px; line-height: 1.6; }
+.plan-modal form { display: grid; grid-template-columns: 1fr 1fr; gap: 23px 25px; }
+.plan-modal form > label:not(.plan-modal__consent) { display: flex; flex-direction: column; gap: 8px; }
+.plan-modal form label > span { font-size: 10px; text-transform: uppercase; letter-spacing: .06em; }
+.plan-modal input:not([type="checkbox"]), .plan-modal select, .plan-modal textarea { width: 100%; border: 0; border-bottom: 1px solid rgba(10,25,47,.35); border-radius: 0; padding: 8px 0 10px; background: transparent; color: var(--ink); font: 15px "Basis", sans-serif; outline: 0; }
+.plan-modal textarea { resize: vertical; min-height: 76px; }
+.plan-modal input:focus, .plan-modal select:focus, .plan-modal textarea:focus { border-color: var(--ink); box-shadow: 0 1px var(--ink); }
+.plan-modal__message, .plan-modal__consent, .plan-modal__submit { grid-column: 1 / -1; }
+.plan-modal__consent { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+.plan-modal__consent input { flex: 0 0 auto; width: 15px; height: 15px; margin: 1px 0 0; accent-color: var(--ink); }
+.plan-modal__consent span { color: #526276; font-size: 10px !important; line-height: 1.45; text-transform: none !important; letter-spacing: 0 !important; }
+.plan-modal__submit, .plan-modal__success button { width: 100%; border: 1px solid var(--ink); padding: 14px 20px; background: var(--ink); color: white; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.plan-modal__submit { display: flex; justify-content: space-between; align-items: center; }
+.plan-modal__submit span { font-size: 24px !important; line-height: .5; }
+.plan-modal__submit:hover, .plan-modal__success button:hover { background: white; color: var(--ink); }
+.plan-modal__success { padding-top: 25px; }
+.plan-modal__success > span { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid var(--ink); border-radius: 50%; font-size: 20px; }
+.plan-modal__success h3 { margin: 25px 0 12px; font-family: "Dream Avenue", serif; font-size: 50px; font-weight: 400; text-transform: uppercase; }
+.plan-modal__success p { color: #526276; line-height: 1.6; }
+.plan-modal__success button { margin-top: 28px; }
+@keyframes plan-backdrop-in { from { opacity: 0; } }
+@keyframes plan-dialog-in { from { opacity: 0; transform: translateY(30px) scale(.98); } }
+@media (max-width: 720px) {
+  .plan-modal { padding: 12px; place-items: end center; }
+  .plan-modal__dialog { display: block; max-height: calc(100svh - 24px); }
+  .plan-modal__aside { display: none; }
+  .plan-modal__content { padding: 52px 25px 30px; }
+  .plan-modal__content h2 { font-size: 48px; }
+  .plan-modal form { grid-template-columns: 1fr; gap: 19px; }
+  .plan-modal__message, .plan-modal__consent, .plan-modal__submit { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .plan-modal, .plan-modal__dialog { animation: none; } }

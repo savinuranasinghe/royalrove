@@ -1,0 +1,51 @@
+export const worldDestinations = [
+  {
+    slug: "sri-lanka", name: "Sri Lanka", region: "Indian Ocean",
+    line: "An island of endless stories.",
+    description: "Ancient kingdoms, tea-covered hills, wild encounters, and golden shores. Discover our home island through journeys shaped around you.",
+    image: "/images/map/sigiriya.webp", alt: "Sigiriya rock fortress rising above Sri Lanka’s green landscape",
+    highlights: ["Culture & heritage", "Wildlife", "Coastal escapes"],
+  },
+  {
+    slug: "maldives", name: "Maldives", region: "Indian Ocean",
+    line: "Find your slower rhythm.",
+    description: "Quiet island mornings, turquoise lagoons, and life beside the reef. Make room for a little barefoot luxury.",
+    image: "/images/destinations/maldives.webp", alt: "Island resort and turquoise lagoon in the Maldives",
+    highlights: ["Island stays", "Reef adventures", "Time for two"],
+  },
+  {
+    slug: "singapore", name: "Singapore", region: "Southeast Asia",
+    line: "A city full of possibility.",
+    description: "Discover striking skylines, lush gardens, and neighbourhoods alive with flavour. A city escape with something new around every corner.",
+    image: "/images/destinations/singapore.webp", alt: "The indoor waterfall and gardens at Jewel Changi Airport in Singapore",
+    highlights: ["City discoveries", "Gardens", "Local flavours"],
+  },
+  {
+    slug: "malaysia", name: "Malaysia", region: "Southeast Asia",
+    line: "Many worlds. One journey.",
+    description: "From Kuala Lumpur’s energy to Penang’s heritage and Borneo’s rainforests, explore a rich meeting of cultures and landscapes.",
+    image: "/images/destinations/malaysia.webp", alt: "The Petronas Twin Towers in Kuala Lumpur, Malaysia",
+    highlights: ["Culture", "Food trails", "Nature"],
+  },
+  {
+    slug: "thailand", name: "Thailand", region: "Southeast Asia",
+    line: "Follow a little wonder.",
+    description: "Temple mornings, vibrant markets, and islands made for lingering. Let Thailand’s warmth set the pace.",
+    image: "/images/destinations/thailand.webp", alt: "Neon-lit streets and tuk-tuks in Bangkok’s Chinatown, Thailand",
+    highlights: ["Temples", "Island escapes", "Market life"],
+  },
+  {
+    slug: "turkey", name: "Turkey", region: "Europe & Asia",
+    line: "Where stories meet.",
+    description: "Wander Istanbul’s storied streets, discover Cappadocia’s remarkable landscapes, and savour traditions that bring every journey to life.",
+    image: "/images/destinations/turkey.webp", alt: "A red heritage tram on a lively Istanbul street, Turkey",
+    highlights: ["Living history", "Local flavours", "Unusual landscapes"],
+  },
+  {
+    slug: "dubai", name: "Dubai", region: "United Arab Emirates",
+    line: "Beyond the expected.",
+    description: "A bold skyline, old souks, and the stillness of the desert. Discover a different side of Dubai with every experience.",
+    image: "/images/destinations/dubai.webp", alt: "Atlantis The Palm beside the water in Dubai",
+    highlights: ["City life", "Desert experiences", "Refined stays"],
+  },
+];

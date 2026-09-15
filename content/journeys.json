@@ -1,0 +1,255 @@
+{
+  "journeys": [
+    {
+      "title": "The Essence of Sri Lanka",
+      "highlights": [
+        "Colombo – Arrival and introduction to Sri Lanka",
+        "Sigiriya / Dambulla – Ancient heritage and cultural landmarks",
+        "Polonnaruwa – Explore the ruins of Sri Lanka's medieval kingdom",
+        "Kandy – Temple of the Sacred Tooth Relic and cultural experiences",
+        "Nuwara Eliya / Ella – Tea plantations and spectacular hill-country scenery",
+        "Scenic train journey through the mountains",
+        "Yala National Park – Wildlife safari",
+        "Galle – Explore the historic Dutch Fort",
+        "South Coast – Relax on Sri Lanka's tropical beaches"
+      ],
+      "duration": "09 Nights / 10 Days",
+      "category": "Cultural • Scenic • Wildlife • Beach",
+      "slug": "the-essence-of-sri-lanka",
+      "image": "sigiriya",
+      "summary": "Ancient cities, tea-covered hills, a wildlife safari, and the southern coast—a first taste of everything Sri Lanka offers.",
+      "destinationHref": "/destinations#sri-lanka",
+      "destinationLabel": "Sri Lanka",
+      "experienceHref": "/experiences#culture-heritage"
+    },
+    {
+      "title": "Ancient Sri Lanka",
+      "highlights": [
+        "Dambulla – Cave Temple complex",
+        "Sigiriya – Iconic Rock Fortress",
+        "Polonnaruwa – Ancient royal capital",
+        "Minneriya / Kaudulla – Optional wildlife experience",
+        "Kandy – Temple of the Sacred Tooth Relic",
+        "Cultural dance performance",
+        "Kandy Lake and city sightseeing",
+        "Nuwara Eliya – Colonial hill-country charm",
+        "Colombo – City sightseeing and departure"
+      ],
+      "duration": "07 Nights / 08 Days",
+      "category": "Cultural & Heritage",
+      "slug": "ancient-sri-lanka",
+      "image": "polonnaruwa",
+      "summary": "Trace ancient kingdoms and sacred temples, from Sigiriya and Dambulla to the cultural heart of Kandy.",
+      "destinationHref": "/destinations#sri-lanka",
+      "destinationLabel": "Sri Lanka",
+      "experienceHref": "/experiences#culture-heritage"
+    },
+    {
+      "title": "Tea Trails & Mountain Escapes",
+      "highlights": [
+        "Kandy – Cultural heritage and temple visit",
+        "Tea plantation & factory experience",
+        "Ramboda – Waterfalls and mountain scenery",
+        "Nuwara Eliya – Tea country and colonial architecture",
+        "Nanu Oya scenic train journey",
+        "Ella – Mountains, viewpoints and relaxed atmosphere",
+        "Nine Arch Bridge",
+        "Little Adam's Peak",
+        "Haputale – Spectacular viewpoints",
+        "Optional hiking and nature experiences"
+      ],
+      "duration": "08 Nights / 09 Days",
+      "category": "Kandy & Hill Country • Scenic",
+      "slug": "tea-trails-mountain-escapes",
+      "image": "ella",
+      "summary": "Travel from Kandy into tea country, with misty waterfalls, mountain walks, and an unforgettable train journey.",
+      "destinationHref": "/destinations#sri-lanka",
+      "destinationLabel": "Sri Lanka",
+      "experienceHref": "/experiences#food-local-life"
+    },
+    {
+      "title": "Wild Sri Lanka",
+      "highlights": [
+        "Sigiriya / Cultural Triangle",
+        "Minneriya or Kaudulla National Park",
+        "Kandy",
+        "Nuwara Eliya / Ella",
+        "Udawalawe National Park",
+        "Yala National Park",
+        "Morning and/or evening jeep safari",
+        "Wildlife and bird watching",
+        "South Coast beach relaxation",
+        "Optional whale watching"
+      ],
+      "duration": "09 Nights / 10 Days",
+      "category": "Wildlife & Nature",
+      "slug": "wild-sri-lanka",
+      "image": "pinnawala",
+      "summary": "Explore national parks, watch for wildlife and birds, and finish with unhurried days beside the Indian Ocean.",
+      "destinationHref": "/destinations#sri-lanka",
+      "destinationLabel": "Sri Lanka",
+      "experienceHref": "/experiences#wildlife-nature"
+    },
+    {
+      "title": "Southern Soul",
+      "highlights": [
+        "Colombo – City introduction",
+        "Galle Fort – Heritage exploration",
+        "Bentota – River and beach experiences",
+        "Hikkaduwa – Coral coast and ocean activities",
+        "Weligama / Mirissa – Surfing and coastal life",
+        "Hiriketiya / Dickwella – Relaxed beach escape",
+        "Optional whale watching",
+        "Optional surfing lessons",
+        "Beachside dining and relaxation",
+        "Southern coastal villages"
+      ],
+      "duration": "08 Nights / 09 Days",
+      "category": "South Coast • Beach • Culture",
+      "slug": "southern-soul",
+      "image": "mirissa",
+      "summary": "Explore Galle Fort, laid-back beach towns, and the southern coast, with time for local food and the ocean.",
+      "destinationHref": "/destinations#sri-lanka",
+      "destinationLabel": "Sri Lanka",
+      "experienceHref": "/experiences#beach-island-escapes"
+    },
+    {
+      "title": "East Coast Escape",
+      "highlights": [
+        "Kandy – Cultural experience",
+        "Sigiriya – Rock Fortress",
+        "Polonnaruwa – Ancient city",
+        "Pasikudah – Beach relaxation",
+        "Batticaloa – Lagoon and cultural experiences",
+        "Arugam Bay – World-famous surfing destination",
+        "Surfing experiences",
+        "Lagoon excursions",
+        "Beach activities",
+        "Optional wildlife safari en route"
+      ],
+      "duration": "09 Nights / 10 Days",
+      "category": "East Coast • Beach • Adventure",
+      "slug": "east-coast-escape",
+      "image": "beach",
+      "summary": "Pair the heritage of Kandy and Polonnaruwa with Pasikudah’s beaches and the surf culture of Arugam Bay.",
+      "destinationHref": "/destinations#sri-lanka",
+      "destinationLabel": "Sri Lanka",
+      "experienceHref": "/experiences#beach-island-escapes"
+    },
+    {
+      "title": "Northern Soul",
+      "highlights": [
+        "Anuradhapura – Ancient sacred city",
+        "Mihintale – Buddhist heritage",
+        "Jaffna – Cultural and historical exploration",
+        "Jaffna Fort",
+        "Nallur Kandaswamy Kovil",
+        "Jaffna Market",
+        "Local Tamil cuisine experiences",
+        "Nagadeepa / Nainativu island excursion",
+        "Northern villages and landscapes",
+        "Wilpattu National Park – Optional safari"
+      ],
+      "duration": "07 Nights / 08 Days",
+      "category": "North & Jaffna • Culture • Heritage",
+      "slug": "northern-soul",
+      "image": "anuradhapura",
+      "summary": "Discover Anuradhapura, Jaffna, and the northern islands through sacred sites, local cuisine, and distinctive traditions.",
+      "destinationHref": "/destinations#sri-lanka",
+      "destinationLabel": "Sri Lanka",
+      "experienceHref": "/experiences#culture-heritage"
+    },
+    {
+      "title": "Hidden Sri Lanka",
+      "highlights": [
+        "Negombo / rural Sri Lanka",
+        "Sigiriya countryside",
+        "Village cycling or walking",
+        "Local Sri Lankan cooking experience",
+        "Gal Oya – Nature and wildlife",
+        "Boat safari on Gal Oya Lake",
+        "Ella / Haputale – Mountain scenery",
+        "Hidden waterfalls",
+        "Tea plantation experience",
+        "Hiriketiya / Dickwella – Relaxed beach stay",
+        "Local markets and authentic dining"
+      ],
+      "duration": "10 Nights / 11 Days",
+      "category": "Off the Beaten Path • Authentic Experiences",
+      "slug": "hidden-sri-lanka",
+      "image": "waterfall",
+      "summary": "Follow village paths, hidden waterfalls, and local flavours, with time for Gal Oya, tea country, and the coast.",
+      "destinationHref": "/destinations#sri-lanka",
+      "destinationLabel": "Sri Lanka",
+      "experienceHref": "/experiences#food-local-life"
+    },
+    {
+      "title": "Adventure Island",
+      "highlights": [
+        "Kitulgala – White-water rafting",
+        "Jungle trekking",
+        "Kandy – Cultural sightseeing",
+        "Sigiriya / Pidurangala – Hiking",
+        "Ella – Zipline and mountain adventures",
+        "Yala – Wildlife safari",
+        "South Coast – Surfing and water sports",
+        "ATV adventure",
+        "Scenic train journey",
+        "Optional diving / snorkeling"
+      ],
+      "duration": "09 Nights / 10 Days",
+      "category": "Adventure & Thrills",
+      "slug": "adventure-island",
+      "image": "train",
+      "summary": "Raft, hike, zipline, and surf your way through a journey that brings mountains, rivers, wildlife, and ocean together.",
+      "destinationHref": "/destinations#sri-lanka",
+      "destinationLabel": "Sri Lanka",
+      "experienceHref": "/experiences#adventure-thrills"
+    },
+    {
+      "title": "Island in Style",
+      "highlights": [
+        "Colombo – Luxury city stay",
+        "Sigiriya – Private cultural experience",
+        "Kandy – Heritage and culture",
+        "Tea Country – Premium tea experience",
+        "Ella – Scenic mountain landscapes",
+        "Yala – Private/selected safari experience",
+        "Galle Fort – Heritage exploration",
+        "Luxury beach resort",
+        "Private dining experiences",
+        "Spa and wellness options",
+        "Optional Sri Lanka + Maldives extension"
+      ],
+      "duration": "11 Nights / 12 Days",
+      "category": "Luxury • Beach • Culture • Wildlife",
+      "slug": "island-in-style",
+      "image": "galle",
+      "summary": "Combine heritage and wildlife with refined stays, private experiences, and a relaxed luxury beach escape.",
+      "destinationHref": "/destinations#sri-lanka",
+      "destinationLabel": "Sri Lanka",
+      "experienceHref": "/experiences#wellness-escapes"
+    }
+  ],
+  "inclusions": {
+    "covered": [
+      "Accommodation in selected hotels",
+      "Daily breakfast",
+      "Private air-conditioned vehicle / transportation",
+      "English-speaking chauffeur/guide",
+      "Airport transfers",
+      "Sightseeing and entrance fees as specified in the final itinerary",
+      "Activities and experiences specifically stated as included"
+    ],
+    "notCovered": [
+      "International airfare",
+      "Visa fees",
+      "Lunches and dinners unless specifically stated",
+      "Personal expenses",
+      "Tips and gratuities",
+      "Travel insurance",
+      "Optional activities and excursions",
+      "Anything not specifically mentioned under “Covered”"
+    ]
+  }
+}
