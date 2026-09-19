@@ -41,7 +41,7 @@ const manifestoSlides = [
   { title: "Wildlife & nature", subtitle: "Wonder in every landscape", background: "/images/map/pinnawala.webp", image: "/images/map/pinnawala.webp" },
   { title: "Adventure & thrills", subtitle: "Move beyond the familiar", background: "/images/map/ella.webp", image: "/images/map/ella.webp" },
   { title: "Beach & island escapes", subtitle: "Follow the rhythm of the coast", background: "/images/map/unawatuna.webp", image: "/images/map/unawatuna.webp" },
-  { title: "Wellness & escapes", subtitle: "Slow down. Reconnect.", background: "/images/map/welness.webp", image: "/images/map/welness.webp" },
+  { title: "Wellness & escapes", subtitle: "Slow down. Reconnect.", background: "/images/map/welness1.jpg", image: "/images/map/welness1.jpg" },
   { title: "Food & local life", subtitle: "Get to know the island", background: "/images/map/nuwara-eliya.webp", image: "/images/map/nuwara-eliya.webp" },
 ];
 
@@ -305,6 +305,7 @@ export default function Home() {
       <section className="testimonials" id="why-royal-rove" data-scroll-section>
         <button onClick={() => setQuote((quote - 1 + reasons.length) % reasons.length)} aria-label="Previous reason">←</button>
         <div className="testimonials__orb">
+          <Image className="testimonials__round-image" src="/images/roundimage.webp" alt="" fill sizes="(max-width: 767px) 350px, 520px" />
           <h3>Why Royal Rove</h3>
           <p key={quote}>{reasons[quote][0]}</p>
           <strong>{reasons[quote][1]}</strong>
