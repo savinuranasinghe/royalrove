@@ -1,0 +1,45 @@
+.travel-page--travel-plus .travel-hero__image { object-position: center 45%; }
+.travel-page--travel-plus .travel-hero__shade { background: linear-gradient(180deg, #07172b80, #07172b65 45%, #07172ba8); }
+.travel-plus-intro { max-width: 1600px; margin: auto; padding: 110px 7vw; display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 9vw; }
+.travel-plus-logo { display: block; width: 260px; max-width: 85%; height: auto; margin-bottom: 45px; }
+.travel-plus-intro h2, .travel-plus-collection h2, .travel-plus-wedding h2 { font-family: "Dream Avenue", serif; font-weight: 400; text-transform: uppercase; font-size: clamp(48px, 4.7vw, 76px); line-height: .97; margin: 0 0 28px; }
+.travel-plus-intro__copy > p { max-width: 580px; font-size: 15px; line-height: 1.8; color: var(--travel-muted); }
+.travel-plus-intro__brand { text-align: center; }
+.travel-plus-intro__brand img { width: 100%; height: auto; }
+.travel-plus-intro__brand .travel-script { margin-top: 28px; font-size: 34px; }
+.travel-plus-collection { padding: 95px 7vw 110px; background: #f3f6f7; }
+.travel-plus-collection__heading { max-width: 1400px; margin: 0 auto 65px; display: flex; justify-content: space-between; align-items: end; gap: 45px; }
+.travel-plus-collection__heading h2 { margin-bottom: 0; }
+.travel-plus-collection__heading > p { max-width: 370px; color: var(--travel-muted); font-size: 15px; line-height: 1.7; }
+.travel-plus-grid { max-width: 1400px; margin: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 65px 34px; }
+.travel-plus-grid > div { min-width: 0; }
+.travel-plus-card__image { position: relative; aspect-ratio: 1.25; overflow: hidden; margin-bottom: 26px; background: #dce3e7; }
+.travel-plus-card__image img { object-fit: cover; transition: transform .8s ease; }
+.travel-plus-card:hover img { transform: scale(1.045); }
+.travel-plus-card__image > span { position: absolute; bottom: 0; left: 0; background: var(--ink); color: white; width: 45px; height: 45px; display: grid; place-items: center; font-size: 11px; letter-spacing: .06em; }
+.travel-plus-card h3 { font-family: "Dream Avenue", serif; font-size: clamp(31px, 2.55vw, 43px); line-height: 1.06; font-weight: 400; text-transform: uppercase; margin: 0 0 18px; }
+.travel-plus-card > p { font-size: 14px; color: var(--travel-muted); line-height: 1.75; margin: 0 0 12px; }
+.travel-plus-card .travel-link { font-size: 10px; gap: 18px; }
+.travel-plus-wedding { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+.travel-plus-wedding__image { position: relative; min-height: 620px; height: 100%; }
+.travel-plus-wedding__image img { object-fit: cover; }
+.travel-plus-wedding__copy { padding: 85px 6vw; }
+.travel-plus-wedding__copy > p:not(.travel-eyebrow):not(.travel-script) { color: var(--travel-muted); font-size: 15px; line-height: 1.8; margin-bottom: 25px; }
+@media (max-width: 1050px) {
+  .travel-plus-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .travel-plus-intro { gap: 5vw; padding-inline: 5vw; }
+  .travel-plus-collection { padding-inline: 5vw; }
+}
+@media (max-width: 767px) {
+  .travel-plus-intro { grid-template-columns: 1fr; padding: 70px 22px; gap: 45px; }
+  .travel-plus-intro__brand { max-width: 420px; margin: auto; padding-top: 30px; border-top: 1px solid #0a192f25; }
+  .travel-plus-intro h2, .travel-plus-collection h2, .travel-plus-wedding h2 { font-size: 49px; }
+  .travel-plus-collection { padding: 65px 22px 75px; }
+  .travel-plus-collection__heading { display: block; margin-bottom: 40px; }
+  .travel-plus-collection__heading > p { margin-top: 25px; }
+  .travel-plus-grid { gap: 45px 22px; }
+  .travel-plus-wedding { grid-template-columns: 1fr; }
+  .travel-plus-wedding__image { min-height: 0; height: auto; aspect-ratio: 1.1; }
+  .travel-plus-wedding__copy { padding: 55px 22px 65px; }
+}
+@media (max-width: 600px) { .travel-plus-grid { grid-template-columns: 1fr; } .travel-plus-card h3 { font-size: 38px; } }

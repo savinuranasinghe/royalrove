@@ -1,13 +1,15 @@
 import Image from "next/image";
+import RoyalRoveLogo from "./RoyalRoveLogo";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import Header from "./Header";
 import LegalLinks from "./LegalLinks";
+import FooterContact from "./FooterContact";
 import { travelNavigation } from "@/content/travel";
 import "./TravelPage.css";
 
 type TravelPageProps = {
-  active: "journeys" | "experiences" | "destinations" | "hotels";
+  active: "journeys" | "experiences" | "destinations" | "hotels" | "travel-plus";
   eyebrow: string;
   title: ReactNode;
   subtitle: string;
@@ -21,7 +23,7 @@ const pages = [
   { slug: "journeys", label: "Journeys" },
   { slug: "experiences", label: "Experiences" },
   { slug: "destinations", label: "Destinations" },
-  { slug: "hotels", label: "Hotels & Stays" },
+  { slug: "hotels", label: "Our Curated Stays" },
 ];
 
 export default function TravelPage({ active, eyebrow, title, subtitle, image, imageAlt, showPageNav = true, children }: TravelPageProps) {
@@ -37,7 +39,7 @@ export default function TravelPage({ active, eyebrow, title, subtitle, image, im
           <p className="travel-hero__subtitle">{subtitle}</p>
         </div>
         <div className="travel-hero__bottom">
-          <span><Link href="/">Home</Link><span aria-hidden="true"> / </span>{pages.find(page => page.slug === active)?.label}</span>
+          <span><Link href="/">Home</Link><span aria-hidden="true"> / </span>{active === "travel-plus" ? "Travel+" : pages.find(page => page.slug === active)?.label}</span>
           <a href="#collection">Explore the collection <span aria-hidden="true">↓</span></a>
         </div>
       </section>
@@ -47,13 +49,13 @@ export default function TravelPage({ active, eyebrow, title, subtitle, image, im
       {children}
       <section className="travel-invitation" id="connect">
         <p className="travel-eyebrow">Designed around you</p>
-        <h2>Your journey.<br /><em>Your rhythm.</em></h2>
-        <p>Tell us what you love. We’ll shape the places, experiences, and stays around you.</p>
-        <a className="travel-link" href="#connect" data-plan-popup data-plan-context="Plan your journey">Plan your journey <span aria-hidden="true">⟶</span></a>
+        <h2>{active === "travel-plus" ? <>Your people.<br /><em>Your occasion.</em></> : <>Your journey.<br /><em>Your rhythm.</em></>}</h2>
+        <p>{active === "travel-plus" ? "From networking and professional growth to celebration and giving back, let’s make your next gathering memorable." : "Tell us what you love. We’ll shape the places, experiences, and stays around you."}</p>
+        <a className="travel-link" href="#connect" data-plan-popup data-plan-context={active === "travel-plus" ? "Travel+ event enquiry" : "Plan your journey"}>{active === "travel-plus" ? "Plan your event" : "Plan your journey"} <span aria-hidden="true">⟶</span></a>
       </section>
       <footer className="travel-footer">
-        <div><Link className="travel-footer__brand" href="/">Royal Rove</Link><p>Personal journeys. Meaningful stories.</p></div>
-        <nav aria-label="Footer navigation">{pages.map(page => <Link key={page.slug} href={`/${page.slug}`}>{page.label}</Link>)}<Link href="/#about-royal-rove">About</Link><Link href="/#travel-plus">Travel+</Link><Link href="/#connect">Contact</Link></nav>
+        <div><Link className="travel-footer__brand" href="/" aria-label="Royal Rove home"><RoyalRoveLogo /></Link><p>Personal journeys. Meaningful stories.</p><FooterContact /></div>
+        <nav aria-label="Footer navigation">{pages.map(page => <Link key={page.slug} href={`/${page.slug}`}>{page.label}</Link>)}<Link href="/#about-royal-rove">About</Link><Link href="/travel-plus">Travel+</Link><Link href="/#connect">Contact</Link></nav>
         <LegalLinks />
         <div className="travel-footer__bottom"><span>©2026 Royal Rove</span><span>Developed by <a href="https://divgaze.com" target="_blank" rel="noopener noreferrer">divgaze.com</a></span><a href="#top">Back to top ↑</a></div>
       </footer>

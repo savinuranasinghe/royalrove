@@ -85,7 +85,7 @@ export default function PartnersPage() {
             <p>Travel Differently. Stay Connected</p>
             <label><span>Enter your email</span><b>⟶</b><input type="email" aria-label="Email address" /></label>
             <h3>Connect with Snami</h3>
-            <div className="social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">Linkedin</a><a href="#">Youtube</a></div>
+            <div className="social"><a href="https://www.facebook.com/royalrovelk?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a></div>
           </div>
           <div className="footer__contact">Based in Crete<br />Designing Greece<br />T. +30 698 709 7639<br />E. info@snamitravel.com</div>
           <div className="footer__links"><h4>The company</h4><a href="#">About Snami</a><a href="#">Travel Journal</a><a href="#">Sustainability</a><a href="#">FAQ</a><a href="/luxury-dmc-greece">Travel Partners</a><a href="#">Contact</a></div>

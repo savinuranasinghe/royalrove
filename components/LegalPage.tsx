@@ -1,7 +1,9 @@
 import Link from "next/link";
+import RoyalRoveLogo from "./RoyalRoveLogo";
 import type { ReactNode } from "react";
 import Header from "./Header";
 import LegalLinks from "./LegalLinks";
+import FooterContact from "./FooterContact";
 import { travelNavigation } from "@/content/travel";
 import "./LegalPage.css";
 
@@ -18,7 +20,7 @@ export default function LegalPage({ title, path, intro, children }: Props) {
         {children}
         <section id="connect"><h2>Questions?</h2><p>If you have questions about this policy, please contact Royal Rove.</p><Link className="legal-contact" href="/#connect">Contact Royal Rove <span aria-hidden="true">⟶</span></Link></section>
       </article>
-      <footer className="legal-footer"><Link className="legal-footer__brand" href="/">Royal Rove</Link><LegalLinks active={path} /><div className="legal-footer__bottom"><span>©2026 Royal Rove</span><span>Developed by <a href="https://divgaze.com" target="_blank" rel="noopener noreferrer">divgaze.com</a></span></div></footer>
+      <footer className="legal-footer"><Link className="legal-footer__brand" href="/" aria-label="Royal Rove home"><RoyalRoveLogo /></Link><FooterContact /><LegalLinks active={path} /><div className="legal-footer__bottom"><span>©2026 Royal Rove</span><span>Developed by <a href="https://divgaze.com" target="_blank" rel="noopener noreferrer">divgaze.com</a></span></div></footer>
     </main>
   );
 }

@@ -23,7 +23,6 @@ export default function JourneysPage() {
               <p className="travel-card__category">{journey.category}</p>
               <p>{journey.summary}</p>
               <details className="travel-details"><summary>Journey highlights <span aria-hidden="true">+</span></summary><ul>{journey.highlights.map(highlight => <li key={highlight}>{highlight}</li>)}</ul><div className="travel-related"><Link href={journey.destinationHref}>{journey.destinationLabel} ↗</Link><Link href={journey.experienceHref}>Related experiences ↗</Link><Link href="/hotels">Explore stays ↗</Link></div></details>
-              <a className="travel-link" href="#connect" data-plan-popup data-plan-context={journey.title}>Customize this journey <span aria-hidden="true">⟶</span></a>
             </article>
           ))}
         </div>

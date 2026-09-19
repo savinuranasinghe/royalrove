@@ -14,7 +14,7 @@ export default function DestinationsPage() {
   const [sriLanka, ...destinations] = worldDestinations;
 
   return (
-    <TravelPage active="destinations" showPageNav={false} eyebrow="Destinations" title={<>The world.<br />Your way.</>} subtitle="Extraordinary places. Your kind of journey." image="/images/destinations/maldives.webp" imageAlt="Turquoise waters surrounding a Maldives island resort">
+    <TravelPage active="destinations" showPageNav={false} eyebrow="Destinations" title={<>The world.<br />Your way.</>} subtitle="Extraordinary places. Your kind of journey." image="/images/destinations/roy-maldives-hero.jpg" imageAlt="Overwater villas framed by palms in the Maldives">
       <section className="travel-collection world-collection" id="collection" aria-labelledby="collection-heading">
         <div className="travel-intro world-intro">
           <h2 id="collection-heading">Explore the world’s<br />most inspiring<br />destinations.</h2>
@@ -45,7 +45,6 @@ export default function DestinationsPage() {
               <p className="travel-script">{destination.line}</p>
               <p>{destination.description}</p>
               <ul className="travel-places">{destination.highlights.map(highlight => <li key={highlight}>{highlight}</li>)}</ul>
-              <a className="travel-link" href="#connect" data-plan-popup data-plan-context={destination.name} aria-label={`Plan your ${destination.name} escape`}>Plan your escape <span aria-hidden="true">⟶</span></a>
             </article>
           ))}
         </div>

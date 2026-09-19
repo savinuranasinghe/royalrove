@@ -1,0 +1,9 @@
+.footer-contact { min-width: 0; text-transform: none; text-align: left; }
+.footer-contact h4 { margin: 0 0 22px; color: var(--muted-light); font-size: 14px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
+.footer-contact address { display: flex; flex-direction: column; gap: 16px; font-style: normal; font-size: 14px; line-height: 1.8; }
+.footer-contact a { width: fit-content; overflow-wrap: anywhere; }
+.footer-contact a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.footer-contact a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+.travel-footer .footer-contact { margin-top: 30px; }
+.legal-footer > .footer-contact { width: fit-content; max-width: 100%; margin: 0 auto 30px; text-align: center; }
+.legal-footer > .footer-contact address { align-items: center; }

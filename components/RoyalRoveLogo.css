@@ -1,0 +1,8 @@
+.royal-rove-logo { position: relative; display: block; width: 190px; aspect-ratio: 2866 / 1445; overflow: hidden; }
+/* Fit the visible mark while preserving the supplied PNG and its colours. */
+.royal-rove-logo img, .brand .royal-rove-logo img { position: absolute; width: 122.4006%; max-width: none; height: auto; left: -12.9449%; top: -29.5502%; }
+.site-header .brand--royal { width: auto; filter: none; }
+.brand--royal .royal-rove-logo { width: 130px; }
+.header-logo-filter { position: absolute; pointer-events: none; }
+.site-header--blue-logo .royal-rove-logo img { filter: url(#royal-header-blue-letters); }
+@media (max-width: 767px) { .brand--royal .royal-rove-logo { width: 110px; } }

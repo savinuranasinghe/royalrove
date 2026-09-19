@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import RoyalRoveLogo from "./RoyalRoveLogo";
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const links = [
   { label: "Luxury Hotels & Private Villas", href: "#" },
@@ -24,6 +25,67 @@ type HeaderProps = {
 export default function Header({ brandName = "Snami Travel", navLinks = links, meta, requestLabel = "Request" }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [logoOnWhite, setLogoOnWhite] = useState(false);
+  const [menuOnWhite, setMenuOnWhite] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (brandName !== "Royal Rove") return;
+    let frame = 0;
+    const checkBackground = () => {
+      frame = 0;
+      const header = headerRef.current;
+      if (!header) return;
+      // Sample the logo's resting position even while the header slides away.
+      const y = (parseFloat(getComputedStyle(header).top) || 22) + 35;
+      const menu = header.querySelector(".menu-toggle");
+      if (menu) {
+        const bounds = menu.getBoundingClientRect();
+        const menuLayers = document.elementsFromPoint(bounds.left + bounds.width / 2, y);
+        let onWhite = false;
+        for (const layer of menuLayers) {
+          if (header.contains(layer) || layer.closest(".menu-panel")) continue;
+          const style = getComputedStyle(layer);
+          if (layer.matches("img, video, canvas") || style.backgroundImage !== "none") break;
+          const channels = style.backgroundColor.match(/[\d.]+/g)?.map(Number);
+          if (!channels || (channels[3] ?? 1) < 0.5) continue;
+          onWhite = channels.slice(0, 3).every(channel => channel > 225);
+          break;
+        }
+        setMenuOnWhite(onWhite);
+      }
+      const aboutBounds = document.getElementById("about-royal-rove")?.getBoundingClientRect();
+      if (aboutBounds && aboutBounds.top <= y && aboutBounds.bottom > y) {
+        setLogoOnWhite(false);
+        return;
+      }
+      const layers = document.elementsFromPoint(window.innerWidth / 2, y);
+      for (const layer of layers) {
+        if (header.contains(layer) || layer.closest(".menu-panel")) continue;
+        const style = getComputedStyle(layer);
+        if (layer.matches("img, video, canvas") || style.backgroundImage !== "none") {
+          setLogoOnWhite(false);
+          return;
+        }
+        const channels = style.backgroundColor.match(/[\d.]+/g)?.map(Number);
+        if (!channels || (channels[3] ?? 1) < 0.5) continue;
+        setLogoOnWhite(channels.slice(0, 3).every(channel => channel > 225));
+        return;
+      }
+      setLogoOnWhite(false);
+    };
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(checkBackground); };
+    schedule();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    window.addEventListener("load", schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      window.removeEventListener("load", schedule);
+    };
+  }, [brandName]);
 
   useEffect(() => {
     let previous = window.scrollY;
@@ -44,12 +106,19 @@ export default function Header({ brandName = "Snami Travel", navLinks = links, m
 
   return (
     <>
-      <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
-        <button className="menu-toggle" onClick={() => setOpen(true)} aria-label="Open menu">
+      <header ref={headerRef} className={`site-header ${scrolled ? "site-header--scrolled" : ""} ${logoOnWhite ? "site-header--blue-logo" : ""}`}>
+        {brandName === "Royal Rove" && <svg width="0" height="0" className="header-logo-filter" aria-hidden="true"><defs><filter id="royal-header-blue-letters" colorInterpolationFilters="sRGB">
+          <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  10 10 10 0 -28" result="whitePixels" />
+          <feComposite in="whitePixels" in2="SourceAlpha" operator="in" result="letterMask" />
+          <feFlood floodColor="#0a192f" result="blue" />
+          <feComposite in="blue" in2="letterMask" operator="in" result="blueLetters" />
+          <feComposite in="blueLetters" in2="SourceGraphic" operator="over" />
+        </filter></defs></svg>}
+        <button className={`menu-toggle ${menuOnWhite ? "menu-toggle--blue" : ""}`} onClick={() => setOpen(true)} aria-label="Open menu">
           <span /><span />
         </button>
-        <a className={`brand ${brandName !== "Snami Travel" ? "brand--wordmark" : ""}`} href="/" aria-label={`${brandName} home`}>
-          {brandName === "Snami Travel" ? <Image src="/images/logo.svg" alt="Snami Travel" width={118} height={58} priority style={{ height: "auto" }} /> : brandName}
+        <a className={`brand ${brandName === "Royal Rove" ? "brand--royal" : brandName !== "Snami Travel" ? "brand--wordmark" : ""}`} href="/" aria-label={`${brandName} home`}>
+          {brandName === "Royal Rove" ? <RoyalRoveLogo priority /> : brandName === "Snami Travel" ? <Image src="/images/logo.svg" alt="Snami Travel" width={118} height={58} priority style={{ height: "auto" }} /> : brandName}
         </a>
         <a className="request-bubble" href="#connect" {...(requestLabel === "Plan" ? { "data-plan-popup": "", "data-plan-context": "Plan your journey" } : {})}>{requestLabel}</a>
       </header>

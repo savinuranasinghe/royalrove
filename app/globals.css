@@ -61,6 +61,8 @@ img { display: block; }
 .brand--wordmark { width: auto; filter: none; color: white; font-family: "Dream Avenue", serif; font-size: 25px; line-height: 1; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
 .menu-toggle { border: 0; background: transparent; width: 56px; height: 35px; padding: 6px 0; cursor: pointer; mix-blend-mode: difference; }
 .menu-toggle span { display: block; width: 46px; height: 1px; background: white; margin: 10px 0; transition: transform .3s ease, width .3s ease; }
+.menu-toggle--blue { mix-blend-mode: normal; }
+.menu-toggle--blue span { background: #0a192f; }
 .menu-toggle:hover span:last-child { width: 28px; }
 .request-bubble {
   justify-self: end; width: 82px; height: 82px; border-radius: 50%; display: grid; place-items: center;
@@ -149,16 +151,16 @@ img { display: block; }
 .hotels__image.reveal.is-visible, .experiences__small.reveal.is-visible, .experiences__large.reveal.is-visible, .bespoke__accent.reveal.is-visible { clip-path: inset(0); }
 .hotels__image img { transition: transform .9s cubic-bezier(.16,1,.3,1); }
 .hotels__image:hover img { transform: translate3d(0, var(--parallax-y, 0), 0) scale(1.15); }
-.hotels__image--one { width: 33vw; height: 650px; left: 0; top: 420px; }
+.hotels__image--one { width: 33vw; height: 650px; left: 0; top: 245px; }
 .hotels__image--two { width: 30vw; height: 560px; right: 0; top: 0; }
-.hotels__image--one { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transform: translateY(100px); animation: hotel-left-in 1.3s .35s ease-in-out forwards; }
-.hotels__image--two { opacity: 0; animation: hotel-right-in 1.3s .55s ease-in-out forwards; }
+.hotels__image--one { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transform: translateY(100px); animation: hotel-left-in 1.3s ease-in-out forwards; }
+.hotels__image--two { opacity: 0; animation: hotel-right-in 1.3s ease-in-out forwards; }
 .hotels__copy { width: 31vw; position: absolute; right: 9.2vw; top: 920px; }
 .hotels__copy h3 { font-family: "Dream Avenue", serif; font-size: 48px; line-height: .95; font-weight: 400; margin: 0 0 52px; }
 .hotels__copy p { font-size: 16px; line-height: 1.5; margin: 0 0 28px; }
 .hotels__copy .lead { margin-bottom: 28px; }
 .text-button { text-transform: uppercase; border-bottom: 1px solid currentColor; padding: 0 0 5px; font-size: 15px; }
-.hotels__all { position: absolute; left: 50%; bottom: 65px; transform: translateX(-50%); }
+.hotels__all { position: absolute; left: 50%; bottom: 95px; transform: translateX(-50%); }
 .hotels__pager { display: none; }
 .hotels__pager button { appearance: none; border: 0; padding: 0; color: inherit; background: transparent; cursor: pointer; }
 @keyframes hotel-slide-in { from { opacity: .35; } }
@@ -225,6 +227,7 @@ img { display: block; }
 .journal { position: relative; height: 120vh; min-height: 900px; background: var(--paper); overflow: hidden; }
 .journal__image { position: absolute; inset: 0; overflow: hidden; }
 .journal__image img { object-fit: cover; transform: scale(1); will-change: transform; }
+.journal__image::after { content: ""; position: absolute; inset: 0; background: #0a192f75; opacity: var(--journal-progress, 0); pointer-events: none; }
 .journal__info { position: absolute; top: 50%; left: 0; right: 0; z-index: 2; margin: auto; text-align: center; transform: translateY(-50%); }
 .journal__title { display: flex; align-items: center; justify-content: center; width: 75%; margin: auto; }
 .journal__title h2 { flex: 0 0 30%; width: fit-content; margin: 0; padding: 0 10px; color: white; font-family: "Dream Avenue", serif; font-size: clamp(82px, 8vw, 130px); font-weight: 400; text-transform: uppercase; line-height: 1; transition: color .15s linear, padding .15s linear; }
@@ -256,9 +259,9 @@ footer { background: var(--ink); color: white; }
 .footer__brand h3 { font-size: 29px; font-weight: 400; margin: 90px 0 35px; }
 .social { display: flex; flex-wrap: wrap; gap: 20px; color: var(--muted-light); }
 .footer__contact { line-height: 2; text-transform: uppercase; padding-top: 80px; }
-.footer__links { display: flex; flex-direction: column; gap: 14px; padding-top: 260px; }
-.footer__links h4 { margin: 0 0 10px; color: var(--muted-light); text-transform: uppercase; font-size: 16px; }
-.footer__links a { transition: color .2s; }
+.footer__links { display: flex; flex-direction: column; gap: 14px; padding-top: 80px; }
+.footer__links h4 { margin: 0 0 22px; color: var(--muted-light); font-size: 14px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
+.footer__links a { font-size: 14px; transition: color .2s; }
 .footer__links a:hover { color: var(--muted-light); }
 .footer__bottom { min-height: 110px; border-top: 1px solid var(--line-dark); display: grid; grid-template-columns: 1fr 1.5fr 1fr; align-items: center; padding: 25px 5vw; font-size: 14px; }
 .footer__bottom span:nth-child(2) { text-align: center; }
@@ -400,6 +403,7 @@ footer { background: var(--ink); color: white; }
 .partners { padding-inline: 0; }
 .partners__track { display: flex; align-items: center; gap: 10vw; width: max-content; padding-left: 10vw; animation: partner-rail 24s linear infinite; }
 .partners:hover .partners__track { animation-play-state: paused; }
+.partners__track img { filter: url(#hotel-logo-white); }
 @keyframes partner-rail { to { transform: translateX(-50%); } }
 
 .motion-ready footer .footer__brand,
@@ -463,7 +467,7 @@ footer { background: var(--ink); color: white; }
   .hotels__copy { position: static; width: auto; margin-top: 20px; }
   .hotels__copy h3 { font-size: 42px; line-height: .95; margin: 0 0 45px; }
   .hotels__copy p { font-size: 15px; margin-bottom: 29px; }
-  .hotels__all { position: static; display: block; width: fit-content; margin: 58px auto 0; transform: none; }
+  .hotels__all { position: static; display: block; width: fit-content; margin: 38px auto 0; transform: none; }
   .hotels__pager { display: flex; position: static; justify-content: flex-end; gap: 42px; margin-top: 68px; padding-right: 10px; color: var(--ink); }
 
   .experiences { min-height: 1540px; padding: 0 28px; }
@@ -511,8 +515,11 @@ footer { background: var(--ink); color: white; }
   .journal__title { width: 100%; }
   .journal__title h2 { flex-basis: auto; padding-inline: 12px; font-size: 48px; }
   .journal__title span { flex-basis: 26%; }
+  .journal__title--brand h2 { font-size: clamp(34px, 10vw, 48px); }
+  .journal__title--brand span { flex-basis: 8%; }
   .motion-ready .journal__title h2 { padding-inline: calc(12px - var(--journal-progress, 0) * 7px); }
   .motion-ready .journal__title span { flex-basis: calc((1 - var(--journal-progress, 0)) * 26%); }
+  .motion-ready .journal__title--brand span { flex-basis: calc((1 - var(--journal-progress, 0)) * 8%); }
 
   .connect { height: 520px; gap: 75px; }
   .marquee { font-size: 63px; }
