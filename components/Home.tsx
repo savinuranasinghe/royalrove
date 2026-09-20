@@ -19,14 +19,14 @@ const heroSlides = [
   { src: "/hero2.jpg", alt: "Sri Lanka travel landscape" },
 ];
 
-const hotelLogos = [
+const hotelLogos: [string, string, ("jpg" | "png" | "webp")?][] = [
   ["AITKENSPENCE", "Aitken Spence"], ["AMAYA-1", "Amaya Resorts & Spas"],
   ["ANANTARA", "Anantara"], ["AVANI", "Avani"],
   ["CENTARA", "Centara"], ["CINNAMON", "Cinnamon"],
   ["HERITANCE-1", "Heritance"], ["HILTON", "Hilton"],
   ["ITC-2", "ITC Hotels"], ["JETWING", "Jetwing"],
   ["MARRIOTT", "Marriott"], ["MOVENPICK", "Mövenpick"],
-  ["RESPLENDENT", "Resplendent Ceylon"], ["RIU", "RIU"],
+  ["RESPLENDENT", "Resplendent Ceylon", "png"], ["RIU", "RIU", "png"],
   ["SHERATON", "Sheraton"], ["TAJ", "Taj"],
 ];
 
@@ -221,7 +221,18 @@ export default function Home() {
       <SriLankaMap />
 
       <section id="travel-experiences" className="manifesto" data-scroll-section aria-roledescription="carousel" aria-label="Travel experiences">
-        <Image key={manifesto.background} className="cover manifesto__background" src={manifesto.background} alt="" fill sizes="100vw" priority={manifestoSlide === 0} />
+        {manifestoSlides.map((slide, index) => (
+          <Image
+            key={slide.background}
+            className={`cover manifesto__background ${index === manifestoSlide ? "is-active" : ""}`}
+            src={slide.background}
+            alt=""
+            fill
+            sizes="100vw"
+            priority={index === 0}
+            aria-hidden="true"
+          />
+        ))}
         <div className="manifesto__wash" />
         <button onClick={() => changeManifesto(-1)} aria-label="Previous sentiment">←</button>
         <div className="manifesto__copy" key={`${manifesto.title}-${manifestoSlide}`} aria-live="polite">
@@ -293,11 +304,11 @@ export default function Home() {
 
       <section className="services" data-scroll-section>
         <a className="service-card" href="/travel-plus">
-          <Image className="cover" src="/images/drivers.jpg" alt="Group travel service" fill sizes="(max-width: 768px) 100vw, 50vw" />
+          <Image className="cover" src="/images/travel-plus-card.png" alt="Travel+ adventure experience" fill sizes="(max-width: 768px) 100vw, 50vw" />
           <span>Travel+<br /><b>⟶</b></span>
         </a>
         <a className="service-card" href="/hotels" id="hotels-stays">
-          <Image className="cover" src="/images/concierge.jpg" alt="Selected accommodation" fill sizes="(max-width: 768px) 100vw, 50vw" />
+          <Image className="cover" src="/images/stays-card.jpg" alt="A curated coastal stay in Sri Lanka" fill sizes="(max-width: 768px) 100vw, 50vw" />
           <span>Our curated<br />stays <b>⟶</b></span>
         </a>
       </section>
@@ -328,14 +339,32 @@ export default function Home() {
 
       <section className="partners" aria-label="Trusted accommodation partners">
         <svg width="0" height="0" aria-hidden="true" style={{ position: "absolute", pointerEvents: "none" }}>
-          <defs><filter id="hotel-logo-white" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -3 -3 -3 0 8.5" result="whiteLogo" />
-            <feFlood floodColor="#0a192f" floodOpacity="1" result="solidBlueBackground" />
-            <feComposite in="whiteLogo" in2="solidBlueBackground" operator="over" />
+          <defs><filter id="hotel-logo-white" colorInterpolationFilters="sRGB">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 1 0  0 0 0 1 0  0 0 0 1 0  -3 -3 -3 8.5 0" />
           </filter></defs>
         </svg>
         <div className="partners__track" ref={partnerTrack}>
-          {[...hotelLogos, ...hotelLogos].map(([file, name], index) => <Image key={`${file}-${index}`} src={`/images/hotel-logos/${file}.jpg`} alt={index < hotelLogos.length ? name : ""} aria-hidden={index >= hotelLogos.length ? true : undefined} width={500} height={500} sizes="140px" style={{ width: 140, height: 140, maxHeight: 140 }} />)}
+          {[...hotelLogos, ...hotelLogos].map(([file, name, ext = "jpg"], index) => (
+            <Image
+              key={`${file}-${index}`}
+              src={`/images/hotel-logos/${file}.${ext}`}
+              alt={index < hotelLogos.length ? name : ""}
+              aria-hidden={index >= hotelLogos.length ? true : undefined}
+              width={500}
+              height={500}
+              sizes="140px"
+              draggable={false}
+              style={{
+                width: 140,
+                height: 140,
+                maxHeight: 140,
+                pointerEvents: "none",
+                userSelect: "none",
+                WebkitUserSelect: "none",
+                ...(ext === "png" || ext === "webp" ? { filter: "none" } : {}),
+              }}
+            />
+          ))}
         </div>
       </section>
 
