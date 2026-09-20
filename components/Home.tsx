@@ -53,8 +53,8 @@ const hotelSlides = [
     title: "The Essence of Sri Lanka",
     lead: "One island. A world of experiences.",
     copy: "A complete Sri Lankan journey combining ancient heritage, cultural landmarks, scenic hill country, wildlife encounters, and the tropical southern coastline.",
-    left: "/images/travel/train.webp",
-    right: journeyImage("sigiriya"),
+    left: "/images/dabulla.jpg",
+    right: "/images/sigiri3.webp",
   },
   {
     title: "Ancient Sri Lanka",
@@ -75,7 +75,7 @@ const hotelSlides = [
     lead: "Closer to the island’s wild side.",
     copy: "Experience national parks, safari adventures, bird watching, and remarkable wildlife encounters across Sri Lanka’s diverse natural landscapes.",
     left: "/images/map/pinnawala.webp",
-    right: journeyImage("/images/journeys/wild.jpg"),
+    right: "/images/tiger.webp",
   },
   {
     title: "Southern Soul",
